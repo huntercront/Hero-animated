@@ -447,6 +447,15 @@ template {
     font-size: 1.15rem;
     border: none;
     padding: 0.5rem 2.25rem;
-    margin-top: 2rem;
+    margin-right: 1rem;
     cursor: pointer;
+}
+
+.button-container {
+    margin-top: 2rem;
+}
+
+.small-descr {
+    font-size: 0.9rem;
+    max-width: 11rem;
 }
