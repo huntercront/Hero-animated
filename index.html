@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-intro">
+                    <h1 class="hero-title">
+                        <span class="color-main">Full cycle</span> product development
+                    </h1>
+                    <p class="sub-title">Trust us your eCommerce, web, and mobile applications – from blueprinting to realization and go-live.</p>
+
+                    <button class="hero-button">Request a Quote</button>
+                </div>
+                <div class="hero-anim">
+                    <div class="hero-anim-inner c-c">
+                        <div class="hero-main-img">
+                            <img src="./img/ecommerce-img@1x.png" alt="">
+                        </div>
+                    </div>
+                    <div class="hero-anim-bg">
+                        <div class="hero-bg-inner">
+                            <img src="./img/scren-bg.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<div class="container" style="height: 200vh;"></div>
+<script>
+    var item = document.querySelector('.hero-main-img');
+    var itemBg = document.querySelector('.hero-bg-inner');
+    (function() {
+
+        var throttle = function(type, name, obj) {
+            var obj = obj || window;
+            var running = false;
+            var func = function() {
+                if (running) {
+                    return;
+                }
+                running = true;
+                requestAnimationFrame(function() {
+                    obj.dispatchEvent(new CustomEvent(name));
+                    running = false;
+                });
+            };
+            obj.addEventListener(type, func);
+        };
+
+        throttle("scroll", "optimizedScroll");
+    })();
+
+    window.addEventListener("optimizedScroll", function() {
+
+        item.style.transform = "scale(1) rotate( -3deg) rotateX( 0deg) rotateY( 3deg) translateY(-" + (window.pageYOffset / 20) + "%)";
+
+
+    })
+</script>
+
+</html>
